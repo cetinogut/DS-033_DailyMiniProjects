@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuessNumber</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="bg-image"> </div>
+   <div class="container">
+        <h1>Number Guessing Game</h1>
+        <div class="gameArea">
+            <div class="panel upper ">
+                <p>Guess a number between <span>1-100</span> </p>
+                <p>You have <span id="remainingAttempts"> </span>  attempts</p>
+            </div>
+            
+            <div class="form">
+                <input type="text" class="userInput" id="txtUserInput" onkeypress="return isNumber(event)"> <br>
+                <!-- <input type="submit" class="userSubmit" id="btnSubmit" value="Submit" onClick="return validateUserInput()" > -->
+                <div class="submit-hint">
+                    <input type="submit" class="userSubmit" id="btnSubmit" value="Submit" >
+                    <div class="hint">Hint
+                        <span class="hintText"> </span>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="lower-3-boxes">
+                <div class="panel lower resultsPanel">
+                    <p class="previousInputs"></p>
+                    <p class="lastResult"></p>
+                </div>
+                
+                <p class="adjustYourGuess" id="up-down"></p>
+                
+            </div>
+            
+        </div>
+   </div>
+        
+    
+   
+    
+
+    <script src="app.js"></script>
+    <script>
+        // function validateUserInput()
+        // {
+        //     var userInput = document.getElementById('txtUserInput').value;
+        //     if(!userInput.match(/^[0-9]$/))
+        //         {
+        //         alert("Please only enter numeric characters only for your guess (Allowed input:0-9)")
+        //         }
+        // }
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+    
+    
+</body>
+</html>
